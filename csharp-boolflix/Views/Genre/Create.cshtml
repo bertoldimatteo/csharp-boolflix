@@ -1,0 +1,20 @@
+﻿@model Genre
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Crea un nuovo genere</h1>
+        </div>
+        <form asp-controller="Genre" asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            <div class="mb-3">
+                <strong>Nome del genere:</strong>
+                <input asp-for="Name" class="d-block w-100" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="text-end">
+                <input type="submit" class="btn btn-small btn-success" value="Salva" />
+            </div>
+        </form>
+    </div>
+</div>
